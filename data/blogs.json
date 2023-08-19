@@ -1,24 +1,24 @@
 [
     {
       "title": "Exploring Nature's Beauty",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat odio vel lectus faucibus eleifend.",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat odio vel lectus faucibus eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat odio vel lectus faucibus eleifend.",
       "publishDate": "2023-08-01",
-      "author": "John Doe",
+      "author": "Muddasir Shabbir",
       "image": "/images/n2.jpg"
     },
     {
       "title": "Cooking Adventures",
-      "body": "In hac habitasse platea dictumst. Fusce at lorem vitae libero aliquet ultrices.",
+      "body": "In hac habitasse platea dictumst. Fusce at lorem vitae libero aliquet ultrices. In hac habitasse platea dictumst. Fusce at lorem vitae libero aliquet ultrices. In hac habitasse platea dictumst. Fusce at lorem vitae libero aliquet ultrices.",
       "publishDate": "2023-07-25",
-      "author": "Jane Smith",
+      "author": "Muddasir Shabbir",
       "image": "/images/cooking.webp"
     },
     {
       "title": "Travel Diaries: Paris",
-      "body": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque non sapien et mi euismod semper.",
+      "body": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque non sapien et mi euismod semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque non sapien et mi euismod semper.",
       "publishDate": "2023-08-10",
-      "author": "Michael Johnson",
-      "image": "/images/paris.jfif"
+      "author": "Muddasir Shabbir",
+      "image": "/images/paris.webp"
     }
 
   ]

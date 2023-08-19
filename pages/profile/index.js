@@ -1,18 +1,44 @@
-import { useState } from 'react';
+// Profile.js
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import styles from '../../styles/userprofile.module.css';
 
 const Profile = () => {
-  const [firstName, setFirstName] = useState(''); 
-  const [lastName, setLastName] = useState('');   
-  const [password, setPassword] = useState('');   
-  const [profilePhoto, setProfilePhoto] = useState(''); 
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [password, setPassword] = useState('');
+  const [profilePhoto, setProfilePhoto] = useState('');
+  const [updateSuccess, setUpdateSuccess] = useState(false);
   const router = useRouter();
+
+  // Load user data from local storage when component mounts
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem('user'));
+    if (userData) {
+      setFirstName(userData.firstName);
+      setLastName(userData.lastName);
+      setProfilePhoto(userData.profilePhoto || '');
+    }
+  }, []);
 
   const handleUpdateProfile = (e) => {
     e.preventDefault();
-   
-    router.push('/profile');
+
+    const updatedUserData = {
+      firstName,
+      lastName,
+      password, 
+      profilePhoto,
+    };
+
+    localStorage.setItem('user', JSON.stringify(updatedUserData));
+
+    setTimeout(() => {
+      setUpdateSuccess(true);
+      setTimeout(() => {
+        setUpdateSuccess(false);
+      }, 3000);
+    }, 1000);
   };
 
   const handleLogout = () => {
@@ -23,7 +49,10 @@ const Profile = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Profile Page</h1>
-      <button className={`${styles.button} ${styles.logout}`} onClick={handleLogout}>Logout</button>
+      {updateSuccess && <p className={styles.successMessage}>Profile updated successfully!</p>}
+      <button className={`${styles.button} ${styles.logout}`} onClick={handleLogout}>
+        Logout
+      </button>
       <form className={styles.form} onSubmit={handleUpdateProfile}>
         <label className={styles.label}>
           Profile Photo:
@@ -64,7 +93,9 @@ const Profile = () => {
             required
           />
         </label>
-        <button className={styles.button} type="submit">Update Profile</button>
+        <button className={styles.button} type="submit">
+          Update Profile
+        </button>
       </form>
     </div>
   );
